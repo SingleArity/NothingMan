@@ -25,6 +25,15 @@ public class CharacterController : MonoBehaviour
         anim.SetFloat("Move", moveX);
     }
 
+    //object/pickup collision
+
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+        
+    }
+
+    //environment tile collision
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log("player pos" + transform.position);
