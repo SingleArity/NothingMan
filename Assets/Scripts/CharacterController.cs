@@ -18,10 +18,18 @@ public class CharacterController : MonoBehaviour
     //3 - ?
     public bool[] upgrades;
 
+    public GameObject[] upgradePrefabs;
+
+    public List<Ability> abilities;
+
+    public bool isGrounded;
+    public LayerMask groundMask;
+    
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
+        abilities = new List<Ability>();
     }
 
     // Update is called once per frame
@@ -30,7 +38,12 @@ public class CharacterController : MonoBehaviour
         moveX = Input.GetAxis("Horizontal");
         transform.Translate(new Vector3(moveX * moveSpeed, 0f, 0f));
         anim.SetFloat("Move", moveX);
-        
+
+        isGrounded = GetComponent<Collider2D>().IsTouchingLayers(groundMask);
+        foreach(Ability a in abilities)
+        {
+            a.HandleAbility();
+        }
     }
 
 
@@ -40,6 +53,10 @@ public class CharacterController : MonoBehaviour
     private void LateUpdate()
     {
         HandleAnimation();
+        foreach(Ability a in abilities)
+        {
+            a.HandleAnimation();
+        }
     }
 
     void HandleAnimation()
@@ -58,19 +75,22 @@ public class CharacterController : MonoBehaviour
 
     }
 
-    //object/pickup collision
+    //objects/pickups
 
-    private void OnTriggerEnter2D(Collider2D collider)
+    public void AddPowerUp(PowerUp toAdd)
     {
-        
+        Debug.Log("Picked Up");
+        upgrades[toAdd.index] = true;
+        GameObject abilityGO = Instantiate(upgradePrefabs[toAdd.index], transform);
+        abilityGO.GetComponent<Ability>().SetCharacter(this);
+        abilities.Add(abilityGO.GetComponent<Ability>());
+        Destroy(toAdd.gameObject);
     }
 
     //environment tile collision
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("player pos" + transform.position);
-        Debug.Log(collision.gameObject.name + " pos:" + collision.transform.position);
         CollisionEffect(collision.gameObject.tag);
         
     }
@@ -78,7 +98,10 @@ public class CharacterController : MonoBehaviour
     private void OnCollisionExit2D(Collision2D collision)
     {
         MaskRing();
+        
     }
+
+   
 
     public void CollisionEffect(string tag)
     {

@@ -12,8 +12,10 @@ public class MapController : MonoBehaviour
     {
         foreach(Transform tile in baseMap)
         {
-            if (tile.tag != "powerup")
-            tile.GetComponent<SpriteRenderer>().enabled = false;
+            if (tile.tag != "powerup" && tile.tag != "Exit")
+            {
+                tile.GetComponent<SpriteRenderer>().enabled = false;
+            }
         }
     }
 

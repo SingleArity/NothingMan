@@ -24,6 +24,7 @@ public class CameraFollow : MonoBehaviour
         //track the player from the get-go, cause intro cutscene needs this camera position
         //transform.position = new Vector3(target.position.x, target.position.y + 2f, transform.position.z);
         trackingEnabled = true;
+        DontDestroyOnLoad(this.gameObject);
 	}
 
 	void Start ()
@@ -75,6 +76,7 @@ public class CameraFollow : MonoBehaviour
 	void FixedUpdate ()
 	{
 		if (trackingEnabled) {
+            if(target != null)
 			TrackPlayer ();
 		}
 	}
