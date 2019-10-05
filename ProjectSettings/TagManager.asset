@@ -6,9 +6,11 @@ TagManager:
   tags:
   - Left
   - Right
-  - Top
   - Bottom
   - powerup
+  - Exit
+  - Floor
+  - spawn
   layers:
   - Default
   - TransparentFX
@@ -18,7 +20,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Floor
   - 
   - 
   - 
