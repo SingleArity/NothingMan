@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 656069895383901724}
   - component: {fileID: 4322024862168610150}
   - component: {fileID: 5807253958802108884}
+  - component: {fileID: 5077194655954916643}
   m_Layer: 0
   m_Name: Legs
   m_TagString: powerup
@@ -118,3 +119,15 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5077194655954916643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 586391399875995966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77ea523315873094e88d367fe307acd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
