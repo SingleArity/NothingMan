@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: 7eb2d77d445e26c4ab4886e741090ddc
+guid: 5c6450f18b182c14593b6ca3ad6ddd21
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8838937330268059009
-    second: roll_right_0
+      213: -2208510542369132325
+    second: left_0
   - first:
-      213: -6068521646795402041
-    second: roll_right_1
+      213: 7466587184217877672
+    second: left_1
   - first:
-      213: -5407101993112664795
-    second: roll_right_2
+      213: 4719360707221136114
+    second: left_2
   - first:
-      213: 8683402087026970022
-    second: roll_right_3
+      213: 8296649843441410802
+    second: left_3
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -98,7 +98,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: roll_right_0
+      name: left_0
       rect:
         serializedVersion: 2
         x: 0
@@ -112,14 +112,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 06b593dfcf7c0ac4bb2ad60366f59afa
-      internalID: -8838937330268059009
+      spriteID: 0efb84a997c46a94681c01f04daafc02
+      internalID: -2208510542369132325
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: roll_right_1
+      name: left_1
       rect:
         serializedVersion: 2
         x: 16
@@ -133,14 +133,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8c9de624de763fd428884eb457b3dac9
-      internalID: -6068521646795402041
+      spriteID: bef08416d835fcf42a8c9f86d6fe5983
+      internalID: 7466587184217877672
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: roll_right_2
+      name: left_2
       rect:
         serializedVersion: 2
         x: 32
@@ -154,14 +154,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c40668525fa4ed447b2dc901d66e6f34
-      internalID: -5407101993112664795
+      spriteID: d6deffdae709dbf4bb902bdf6c39a6b1
+      internalID: 4719360707221136114
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: roll_right_3
+      name: left_3
       rect:
         serializedVersion: 2
         x: 48
@@ -175,8 +175,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8e761f27a967fdb4396de8a2d6f91f4e
-      internalID: 8683402087026970022
+      spriteID: 683bd2b936ca67349b089bdfac54989e
+      internalID: 8296649843441410802
       vertices: []
       indices: 
       edges: []
@@ -184,7 +184,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 419e9545d80090442a34eb9d2c4770e5
+    spriteID: 808588d62e74f794db10a4d6e1e52af7
     internalID: 0
     vertices: []
     indices: 

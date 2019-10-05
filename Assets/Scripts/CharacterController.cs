@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,6 +11,12 @@ public class CharacterController : MonoBehaviour
     Animator anim;
 
     public Sprite mask_ringright, mask_ringleft, mask_ringtop, mask_ringbottom, mask_full;
+
+    //0 - legs
+    //1 - arms
+    //2 - ?
+    //3 - ?
+    public bool[] upgrades;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +30,32 @@ public class CharacterController : MonoBehaviour
         moveX = Input.GetAxis("Horizontal");
         transform.Translate(new Vector3(moveX * moveSpeed, 0f, 0f));
         anim.SetFloat("Move", moveX);
+        
+    }
+
+
+
+    //animation handling
+
+    private void LateUpdate()
+    {
+        HandleAnimation();
+    }
+
+    void HandleAnimation()
+    {
+        string upgradeBits = "" + Convert.ToInt32(upgrades[0])
+                                + Convert.ToInt32(upgrades[1])
+                                + Convert.ToInt32(upgrades[2])
+                                + Convert.ToInt32(upgrades[3]);
+        Sprite[] bodySprites = Resources.LoadAll<Sprite>("character/body/body_" + upgradeBits);
+
+        string currentSpriteName = GetComponent<SpriteRenderer>().sprite.name;
+
+        Sprite newSprite = Array.Find(bodySprites, x => x.name == currentSpriteName);
+
+        GetComponent<SpriteRenderer>().sprite = newSprite;
+
     }
 
     //object/pickup collision
