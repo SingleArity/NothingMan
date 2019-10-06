@@ -26,13 +26,15 @@ public class CharacterController : MonoBehaviour
 
     public bool isGrounded, isWalking, facingRight;
     public LayerMask groundMask;
-    
+
+    private bool isPlayerInput;
 
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
         abilities = new List<Ability>();
+        isPlayerInput = true;
     }
 
     // Update is called once per frame
@@ -40,6 +42,11 @@ public class CharacterController : MonoBehaviour
     {
         //movement info
         moveX = Input.GetAxis("Horizontal");
+        if (isPlayerInput == false)
+        {
+            print("no player input.");
+            moveX = 0;
+        }
         if(facingRight)
         transform.Translate(new Vector3(moveX * moveSpeed, 0f, 0f));
         else
@@ -60,7 +67,7 @@ public class CharacterController : MonoBehaviour
             isWalking = true;
             walkingTriggerGO.SetActive(true);
         }
-
+     
         //check grounding
         isGrounded = GetComponent<Collider2D>().IsTouchingLayers(groundMask);
 
@@ -77,13 +84,16 @@ public class CharacterController : MonoBehaviour
 
     private void LateUpdate()
     {
-        HandleAnimation();
-        foreach(Ability a in abilities)
+        if (isPlayerInput == true)
         {
-            a.HandleAnimation();
+            HandleAnimation();
+            foreach (Ability a in abilities)
+            {
+                a.HandleAnimation();
+            }
         }
     }
-
+    
     void HandleAnimation()
     {
         //flip or not?
@@ -137,6 +147,12 @@ public class CharacterController : MonoBehaviour
         Destroy(toAdd.gameObject);
     }
 
+    public void Death()
+    {
+        isPlayerInput = false;
+        anim.SetBool("Death", true);
+    }
+
     //environment tile collision
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -158,11 +174,13 @@ public class CharacterController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Exit")
-        {
-            print("collided with exit.");
-            anim.SetBool("Exit", true);
-        }
+    }
+
+    public void Exit()
+    {
+        print("collided with exit.");
+        isPlayerInput = false;
+        anim.SetBool("Exit", true);
     }
 
     public void CollisionEffect(string tag)
