@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="EncodableAsset" id="{6c269b6f-a5d2-4f32-8c0f-af5e4b4856b5}">
+		<property name="assetPath">
+			<value>Happy Drive/</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{2518c191-486d-4ebe-9dab-7a5e3dae88da}</destination>
+		</relationship>
+	</object>
+</objects>

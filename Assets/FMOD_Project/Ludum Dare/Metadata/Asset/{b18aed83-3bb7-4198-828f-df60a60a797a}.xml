@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="EncodableAsset" id="{b18aed83-3bb7-4198-828f-df60a60a797a}">
+		<property name="assetPath">
+			<value>Uptempo Synths/</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{2518c191-486d-4ebe-9dab-7a5e3dae88da}</destination>
+		</relationship>
+	</object>
+</objects>

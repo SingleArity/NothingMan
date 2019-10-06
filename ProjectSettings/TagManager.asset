@@ -11,6 +11,7 @@ TagManager:
   - Exit
   - Floor
   - spawn
+  - walk
   layers:
   - Default
   - TransparentFX

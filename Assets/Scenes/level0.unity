@@ -1557,6 +1557,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5077194655954916643, guid: 449d08039403c6a42ab18affb0e0deb9,
+        type: 3}
+      propertyPath: soundParams.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5077194655954916643, guid: 449d08039403c6a42ab18affb0e0deb9,
+        type: 3}
+      propertyPath: soundParams.Array.data[0]
+      value: Powerup1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5077194655954916643, guid: 449d08039403c6a42ab18affb0e0deb9,
+        type: 3}
+      propertyPath: soundParams.Array.data[1]
+      value: Powerup2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 449d08039403c6a42ab18affb0e0deb9, type: 3}
 --- !u!4 &396476695 stripped
@@ -11643,6 +11658,7 @@ GameObject:
   - component: {fileID: 963194226}
   - component: {fileID: 963194229}
   - component: {fileID: 963194230}
+  - component: {fileID: 963194231}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -11756,6 +11772,19 @@ MonoBehaviour:
   trackingEnabled: 0
   targetX: 0
   targetY: 0
+--- !u!114 &963194231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ListenerNumber: -1
 --- !u!4 &991394464 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4406681534022257515, guid: 1bae37a2f06230147bbda4cd16b09662,

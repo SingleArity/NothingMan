@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{44c088eb-f00c-46ca-bacd-639a1233a0ee}">
+		<property name="assetPath">
+			<value>Happy Drive/Happy drive_PHOTAY_drum_loop_acoustic_hihats_01_100.aif</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>84.706394557823131</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{2518c191-486d-4ebe-9dab-7a5e3dae88da}</destination>
+		</relationship>
+	</object>
+</objects>
