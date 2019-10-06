@@ -12,6 +12,7 @@ TagManager:
   - Floor
   - spawn
   - walk
+  - corner
   layers:
   - Default
   - TransparentFX
@@ -22,8 +23,8 @@ TagManager:
   - 
   - 
   - Floor
-  - 
-  - 
+  - Wall
+  - Corner
   - 
   - 
   - 

@@ -13,6 +13,7 @@ public class Jump : Ability
     {
         anim = GetComponent<Animator>();
         cc = GetComponentInParent<CharacterController>();
+        cc.GetComponent<CircleCollider2D>().offset = new Vector2(0f, -.3f);
     }
 
     // Update is called once per frame
@@ -32,7 +33,7 @@ public class Jump : Ability
     public override void HandleAnimation()
     {
         
-        anim.SetFloat("MoveX", cc.moveX);
+        anim.SetBool("Moving", cc.moving);
 
     }
 
@@ -40,7 +41,7 @@ public class Jump : Ability
     {
         if (character.isGrounded)
         {
-            character.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, 40f));
+            character.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, 80f));
         }
     }
 }
