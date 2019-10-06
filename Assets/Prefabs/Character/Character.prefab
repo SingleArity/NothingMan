@@ -251,7 +251,7 @@ MonoBehaviour:
   upgradePrefabs:
   - {fileID: 5346628982171399598, guid: b47976883f4e92946912c39849cd39b5, type: 3}
   - {fileID: 8990459212974101538, guid: 646a4d2f58e1a4848b623eef7cdb63e4, type: 3}
-  - {fileID: 0}
+  - {fileID: 6650436813418982541, guid: 484d1bc3b6920f04ea2034d1377533d8, type: 3}
   - {fileID: 0}
   abilities: []
   walkingTriggerGO: {fileID: 2164608465246164505}

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -70,6 +71,17 @@ public class GameManager : MonoBehaviour
     {
         levelNum += 1;
         SceneManager.LoadScene("level" + levelNum);
+    }
+
+    public IEnumerator ShowFlavorText(string flavorText)
+    {
+        string currentMessageText = messageGO.GetComponent<TextMeshProUGUI>().text;
+        messageGO.GetComponent<TextMeshProUGUI>().text = flavorText;
+        messageGO.SetActive(true);
+        yield return new WaitForSeconds(2f);
+        messageGO.SetActive(false);
+        messageGO.GetComponent<TextMeshProUGUI>().text = currentMessageText;
+
     }
 
 
