@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="EncodableAsset" id="{0a08d30b-aa2a-4fa4-b692-5a45a876a38c}">
+		<property name="assetPath">
+			<value>Medium Tempo/</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{2518c191-486d-4ebe-9dab-7a5e3dae88da}</destination>
+		</relationship>
+	</object>
+</objects>

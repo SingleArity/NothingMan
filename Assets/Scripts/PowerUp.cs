@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMODUnity;
 
 public class PowerUp : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class PowerUp : MonoBehaviour
 
     //index is used by character controller to add the powerup
     public int index;
+
+    public string[] soundParams;
 
     // Start is called before the first frame update
     void Start()
@@ -33,7 +36,12 @@ public class PowerUp : MonoBehaviour
     {
         if (collider.gameObject.tag == "Player")
         {
+            foreach (string s in soundParams)
+            {
+                collider.GetComponent<StudioEventEmitter>().SetParameter(s, 1f);
+            }
             collider.GetComponent<CharacterController>().AddPowerUp(this);
         }
     }
+
 }
