@@ -22,9 +22,12 @@ public class CharacterController : MonoBehaviour
 
     public List<Ability> abilities;
 
-    public bool isGrounded;
+    public GameObject walkingTriggerGO;
+
+    public bool isGrounded, isWalking;
     public LayerMask groundMask;
     
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,11 +38,29 @@ public class CharacterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //movement info
         moveX = Input.GetAxis("Horizontal");
         transform.Translate(new Vector3(moveX * moveSpeed, 0f, 0f));
         anim.SetFloat("Move", moveX);
 
+        //walking trigger
+        //turn off
+        if (isWalking && moveX == 0f)
+        {
+            isWalking = false;
+            walkingTriggerGO.SetActive(false);
+        }
+        //turn on
+        if(!isWalking && moveX != 0f)
+        {
+            isWalking = true;
+            walkingTriggerGO.SetActive(true);
+        }
+
+        //check grounding
         isGrounded = GetComponent<Collider2D>().IsTouchingLayers(groundMask);
+
+        //handle abilities
         foreach(Ability a in abilities)
         {
             a.HandleAbility();
