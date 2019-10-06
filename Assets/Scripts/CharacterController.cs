@@ -161,7 +161,7 @@ public class CharacterController : MonoBehaviour
         if (collision.gameObject.tag == "Exit")
         {
             print("collided with exit.");
-            //anim.SetBool("Exit", true);
+            anim.SetBool("Exit", true);
         }
     }
 
