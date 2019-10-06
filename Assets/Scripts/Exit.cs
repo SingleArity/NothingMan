@@ -33,7 +33,7 @@ public class Exit : MonoBehaviour
     public IEnumerator ExitLevel()
     {
         DisplayMessage();
-        while(!Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space))
+        while(!Input.GetKeyDown(KeyCode.Return) && !Input.GetKeyDown(KeyCode.Space))
             yield return null;
         HideMessage();
         gm.NextLevel();

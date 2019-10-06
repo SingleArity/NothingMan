@@ -240,7 +240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de4eb8b567fed894ea8a1da769260d98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0.2
+  moveSpeed: 0.15
   moveX: 0
   mask_ringright: {fileID: 21300000, guid: 8ec5f7ee9e464544c9f7b81e3b843a04, type: 3}
   mask_ringleft: {fileID: 21300000, guid: c41039dc12375894e8054aaa37765548, type: 3}
@@ -255,12 +255,17 @@ MonoBehaviour:
   - {fileID: 0}
   abilities: []
   walkingTriggerGO: {fileID: 2164608465246164505}
+  moving: 0
   isGrounded: 0
   isWalking: 0
   facingRight: 1
+  walled: 0
   groundMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 1280
+  wallMask:
+    serializedVersion: 2
+    m_Bits: 1536
 --- !u!212 &4913327423503097070
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -326,11 +331,11 @@ Rigidbody2D:
   m_Mass: 0.1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 4
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!58 &4913327423503097056
 CircleCollider2D:

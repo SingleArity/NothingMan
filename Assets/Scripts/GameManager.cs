@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(this.gameObject);
+            DontDestroyOnLoad(messageGO.transform.parent);
         }
         //if there is already an instance, destroy this object, don't use it!
         else
