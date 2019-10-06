@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8990459212974101539}
   - component: {fileID: 8990459212974101549}
   - component: {fileID: 8990459212974101548}
+  - component: {fileID: -4659083124628428431}
   m_Layer: 0
   m_Name: Eyeballs
   m_TagString: Untagged
@@ -69,8 +70,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1173805671
   m_SortingLayer: 1
-  m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 19ce7d35a473dd543b5bec5e3ed26048, type: 3}
+  m_SortingOrder: 4
+  m_Sprite: {fileID: -8817426130257391540, guid: 19ce7d35a473dd543b5bec5e3ed26048,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -91,7 +93,7 @@ Animator:
   m_GameObject: {fileID: 8990459212974101538}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 27d613588b12c94498f4a45266dd3474, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -100,3 +102,15 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-4659083124628428431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8990459212974101538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b27aa0486675324eba32f68226987f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

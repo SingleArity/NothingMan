@@ -2,13 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Ability : MonoBehaviour
+public class See : Ability
 {
-    protected CharacterController character;
+
+
+    private void Awake()
+    {
+        GameObject.FindObjectOfType<MapController>().EnableFullSight();    
+    }
 
     // Start is called before the first frame update
     void Start()
     {
+        
     }
 
     // Update is called once per frame
@@ -17,12 +23,14 @@ public abstract class Ability : MonoBehaviour
         
     }
 
-    public void SetCharacter(CharacterController cc)
+    public override void HandleAbility()
     {
-        character = cc;
+        
     }
 
-    public abstract void HandleAbility();
+    public override void HandleAnimation()
+    {
 
-    public abstract void HandleAnimation();
+
+    }
 }

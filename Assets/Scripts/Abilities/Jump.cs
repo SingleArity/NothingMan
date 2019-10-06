@@ -5,10 +5,14 @@ using UnityEngine;
 public class Jump : Ability
 {
 
+    Animator anim;
+    CharacterController cc;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        anim = GetComponent<Animator>();
+        cc = GetComponentInParent<CharacterController>();
     }
 
     // Update is called once per frame
@@ -23,6 +27,13 @@ public class Jump : Ability
         {
             DoJump();
         }
+    }
+
+    public override void HandleAnimation()
+    {
+        
+        anim.SetFloat("MoveX", cc.moveX);
+
     }
 
     void DoJump()

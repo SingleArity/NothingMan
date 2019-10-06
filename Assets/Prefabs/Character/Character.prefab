@@ -244,8 +244,8 @@ MonoBehaviour:
   moveX: 0
   mask_ringright: {fileID: 21300000, guid: 8ec5f7ee9e464544c9f7b81e3b843a04, type: 3}
   mask_ringleft: {fileID: 21300000, guid: c41039dc12375894e8054aaa37765548, type: 3}
-  mask_ringtop: {fileID: 0}
-  mask_ringbottom: {fileID: 0}
+  mask_ringtop: {fileID: 21300000, guid: b0124076629fd2142a8e61dac5512862, type: 3}
+  mask_ringbottom: {fileID: 21300000, guid: 1b7f8a5530a5ece4b80fc3eca35c2b31, type: 3}
   mask_full: {fileID: 21300000, guid: ba103cc35bd231849a3ffea1e6598918, type: 3}
   upgrades: 00000000
   upgradePrefabs:
@@ -257,6 +257,7 @@ MonoBehaviour:
   walkingTriggerGO: {fileID: 2164608465246164505}
   isGrounded: 0
   isWalking: 0
+  facingRight: 1
   groundMask:
     serializedVersion: 2
     m_Bits: 256
