@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using FMODUnity;
+using TMPro;
 
 public class PowerUp : MonoBehaviour
 {
@@ -12,10 +13,15 @@ public class PowerUp : MonoBehaviour
 
     public string[] soundParams;
 
+    public string flavorText;
+
+    GameManager gm;
+
     // Start is called before the first frame update
     void Start()
     {
         startingYPos = transform.localPosition.y;
+        gm = GameManager.Instance;
     }
 
     // Update is called once per frame
@@ -36,12 +42,18 @@ public class PowerUp : MonoBehaviour
     {
         if (collider.gameObject.tag == "Player")
         {
+            if(flavorText != null)
+            {
+                gm.StartCoroutine(gm.ShowFlavorText(flavorText));
+            }
             foreach (string s in soundParams)
             {
                 collider.GetComponent<StudioEventEmitter>().SetParameter(s, 1f);
             }
+
             collider.GetComponent<CharacterController>().AddPowerUp(this);
         }
     }
+
 
 }

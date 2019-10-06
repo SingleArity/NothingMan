@@ -24,10 +24,10 @@ public class CharacterController : MonoBehaviour
 
     public GameObject walkingTriggerGO;
 
-    public bool isGrounded, isWalking, facingRight;
-    public LayerMask groundMask;
-
     private bool isPlayerInput;
+    public bool moving, isGrounded, isWalking, facingRight, walled;
+    public LayerMask groundMask, wallMask;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -52,7 +52,33 @@ public class CharacterController : MonoBehaviour
         else
             transform.Translate(new Vector3(moveX * moveSpeed * -1f, 0f, 0f));
 
+        //check grounding
+        isGrounded = GetComponent<Collider2D>().IsTouchingLayers(groundMask);
+
+        //check if against wall
+        walled = GetComponent<Collider2D>().IsTouchingLayers(wallMask);
+
+        //if we aren't on a wall
+        if (!walled)
+        {
+            TryWalking();
+        }
+        //or if we are walled but also grounded
+        else if (isGrounded)
+        {
+            TryWalking();
+        }
+
         anim.SetFloat("Move", moveX);
+        if(moving && moveX == 0f)
+        {
+            moving = false;
+            anim.SetBool("Moving", false);
+        }else if (!moving && moveX != 0f)
+        {
+            moving = true;
+            anim.SetBool("Moving", true);
+        }
 
         //walking trigger
         //turn off
@@ -78,7 +104,13 @@ public class CharacterController : MonoBehaviour
         }
     }
 
-
+    void TryWalking()
+    {
+        if (facingRight)
+            transform.Translate(new Vector3(moveX * moveSpeed, 0f, 0f));
+        else
+            transform.Translate(new Vector3(moveX * moveSpeed * -1f, 0f, 0f));
+    }
 
     //animation handling
 
