@@ -122,7 +122,14 @@ public class CharacterController : MonoBehaviour
         
     }
 
-   
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Exit")
+        {
+            print("collided with exit.");
+            //anim.SetBool("Exit", true);
+        }
+    }
 
     public void CollisionEffect(string tag)
     {
