@@ -12,10 +12,7 @@ public class MapController : MonoBehaviour
     {
         foreach(Transform tile in baseMap)
         {
-            if (tile.tag != "powerup" && tile.tag != "Exit")
-            {
                 tile.GetComponent<SpriteRenderer>().enabled = false;
-            }
         }
     }
 
@@ -23,5 +20,13 @@ public class MapController : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void EnableFullSight()
+    {
+        foreach (Transform tile in baseMap)
+        {
+            tile.GetComponent<SpriteRenderer>().enabled = true;
+        }
     }
 }
