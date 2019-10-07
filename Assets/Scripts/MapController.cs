@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class MapController : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class MapController : MonoBehaviour
         {
                 tile.GetComponent<SpriteRenderer>().enabled = false;
         }
+        baseMap.GetComponent<TilemapRenderer>().enabled = false;
     }
 
     // Update is called once per frame
@@ -28,5 +30,7 @@ public class MapController : MonoBehaviour
         {
             tile.GetComponent<SpriteRenderer>().enabled = true;
         }
+        baseMap.GetComponent<TilemapRenderer>().enabled = true;
+
     }
 }

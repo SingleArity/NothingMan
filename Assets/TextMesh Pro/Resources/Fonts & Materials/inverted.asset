@@ -36,10 +36,12 @@ Material:
     - _StencilOp: 0
     - _StencilReadMask: 255
     - _StencilWriteMask: 255
+    - _UseUIAlphaClip: 0
     - _VertexOffsetX: 0
     - _VertexOffsetY: 0
     m_Colors:
     - _ClipRect: {r: -32767, g: -32767, b: 32767, a: 32767}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _FaceColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!28 &-485618868522064168
 Texture2D:
@@ -93,9 +95,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
   m_Name: inverted
   m_EditorClassIdentifier: 
-  hashCode: 0
+  hashCode: -175109677
   material: {fileID: -1806513248995667375}
-  materialHashCode: 0
+  materialHashCode: -870238088
   m_Version: 1.1.0
   m_SourceFontFileGUID: 309a326caf197ac46bbaa5254ddaba8d
   m_SourceFontFile_EditorRef: {fileID: 0}
