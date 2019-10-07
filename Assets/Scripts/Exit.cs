@@ -24,8 +24,10 @@ public class Exit : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Player")
+        CharacterController player = collision.gameObject.GetComponent<CharacterController>();
+        if (player)
         {
+            player.Exit();
             StartCoroutine(ExitLevel());
         }
     }

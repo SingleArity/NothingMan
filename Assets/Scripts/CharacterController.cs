@@ -24,6 +24,7 @@ public class CharacterController : MonoBehaviour
 
     public GameObject walkingTriggerGO;
 
+    private bool isPlayerInput;
     public bool moving, isGrounded, isWalking, facingRight, walled, moveDisabled = false;
     public LayerMask groundMask, wallMask;
 
@@ -34,6 +35,7 @@ public class CharacterController : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         abilities = new List<Ability>();
+        isPlayerInput = true;
     }
 
     // Update is called once per frame
@@ -44,13 +46,20 @@ public class CharacterController : MonoBehaviour
         if (!moveDisabled)
             moveX = Input.GetAxis("Horizontal");
         else
-            moveX = 0f;
+            moveX = 0;
+
+        if (isPlayerInput == false)
+        {
+            moveX = 0;
+        }
+        
 
         //check grounding
         isGrounded = GetComponent<Collider2D>().IsTouchingLayers(groundMask);
 
         //check if against wall
         walled = GetComponent<Collider2D>().IsTouchingLayers(wallMask);
+
 
         //if we aren't on a wall
         if (!walled)
@@ -63,12 +72,14 @@ public class CharacterController : MonoBehaviour
             TryWalking();
         }
 
+
         anim.SetFloat("Move", moveX);
-        if(moving && moveX == 0f)
+        if (moving && moveX == 0f)
         {
             moving = false;
             anim.SetBool("Moving", false);
-        }else if (!moving && moveX != 0f)
+        }
+        else if (!moving && moveX != 0f)
         {
             moving = true;
             anim.SetBool("Moving", true);
@@ -82,18 +93,21 @@ public class CharacterController : MonoBehaviour
             walkingTriggerGO.SetActive(false);
         }
         //turn on
-        if(!isWalking && moveX != 0f)
+        if (!isWalking && moveX != 0f)
         {
             isWalking = true;
             walkingTriggerGO.SetActive(true);
         }
 
-        
+        //check grounding
+        isGrounded = GetComponent<Collider2D>().IsTouchingLayers(groundMask);
 
         //handle abilities
-        foreach(Ability a in abilities)
-        {
-            a.HandleAbility();
+        if (isPlayerInput) {
+            foreach (Ability a in abilities)
+            {
+                a.HandleAbility();
+            }
         }
     }
 
@@ -109,13 +123,16 @@ public class CharacterController : MonoBehaviour
 
     private void LateUpdate()
     {
-        HandleAnimation();
-        foreach(Ability a in abilities)
+        if (isPlayerInput == true)
         {
-            a.HandleAnimation();
+            HandleAnimation();
+            foreach (Ability a in abilities)
+            {
+                a.HandleAnimation();
+            }
         }
     }
-
+    
     void HandleAnimation()
     {
         //flip or not?
@@ -172,6 +189,12 @@ public class CharacterController : MonoBehaviour
         Destroy(toAdd.gameObject);
     }
 
+    public void Death()
+    {
+        isPlayerInput = false;
+        anim.SetBool("Death", true);
+    }
+
     //environment tile collision
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -193,7 +216,17 @@ public class CharacterController : MonoBehaviour
         
     }
 
-   
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+    }
+
+    public void Exit()
+    {
+        print("collided with exit.");
+        isPlayerInput = false;
+        GetComponent<CircleCollider2D>().offset = new Vector2(0f, 0f);
+        anim.SetBool("Exit", true);
+    }
 
     public void CollisionEffect(string tag)
     {
