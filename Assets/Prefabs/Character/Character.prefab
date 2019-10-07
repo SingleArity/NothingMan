@@ -247,12 +247,13 @@ MonoBehaviour:
   mask_ringtop: {fileID: 21300000, guid: b0124076629fd2142a8e61dac5512862, type: 3}
   mask_ringbottom: {fileID: 21300000, guid: 1b7f8a5530a5ece4b80fc3eca35c2b31, type: 3}
   mask_full: {fileID: 21300000, guid: ba103cc35bd231849a3ffea1e6598918, type: 3}
-  upgrades: 00000000
+  upgrades: 0000000000
   upgradePrefabs:
   - {fileID: 5346628982171399598, guid: b47976883f4e92946912c39849cd39b5, type: 3}
   - {fileID: 8990459212974101538, guid: 646a4d2f58e1a4848b623eef7cdb63e4, type: 3}
   - {fileID: 6650436813418982541, guid: 484d1bc3b6920f04ea2034d1377533d8, type: 3}
-  - {fileID: 0}
+  - {fileID: 6466395047829631405, guid: 8e5ac9ddbe93255408d7f63e095e2add, type: 3}
+  - {fileID: 6080368388440864193, guid: 1fe9c5c2347041241b589f5661e6a77a, type: 3}
   abilities: []
   walkingTriggerGO: {fileID: 2164608465246164505}
   moving: 0
@@ -260,12 +261,14 @@ MonoBehaviour:
   isWalking: 0
   facingRight: 1
   walled: 0
+  moveDisabled: 0
   groundMask:
     serializedVersion: 2
     m_Bits: 1280
   wallMask:
     serializedVersion: 2
     m_Bits: 1536
+  currentlyCollidingTag: 
 --- !u!212 &4913327423503097070
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -310,7 +313,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.2, y: 0.2}
+  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

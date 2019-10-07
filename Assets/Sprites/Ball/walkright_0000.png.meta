@@ -4,16 +4,16 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: -8838937330268059009
-    second: right_0
+    second: 0
   - first:
       213: -6068521646795402041
-    second: right_1
+    second: 1
   - first:
       213: -5407101993112664795
-    second: right_2
+    second: 2
   - first:
       213: 8683402087026970022
-    second: right_3
+    second: 3
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -98,7 +98,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: right_0
+      name: 0
       rect:
         serializedVersion: 2
         x: 0
@@ -119,7 +119,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: right_1
+      name: 1
       rect:
         serializedVersion: 2
         x: 16
@@ -140,7 +140,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: right_2
+      name: 2
       rect:
         serializedVersion: 2
         x: 32
@@ -161,7 +161,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: right_3
+      name: 3
       rect:
         serializedVersion: 2
         x: 48
