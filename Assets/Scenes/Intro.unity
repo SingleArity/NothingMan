@@ -376,6 +376,8 @@ GameObject:
   - component: {fileID: 643092303}
   - component: {fileID: 643092327}
   - component: {fileID: 643092328}
+  - component: {fileID: 643092329}
+  - component: {fileID: 643092331}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -409,8 +411,7 @@ MonoBehaviour:
     height: 859
   selectedBlocks:
   - {fileID: 643092296}
-  selectedCommands:
-  - {fileID: 643092306}
+  selectedCommands: []
   variables: []
   description: Intro
   stepPause: 0
@@ -457,7 +458,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 34
-    y: 227
+    y: 228
     width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -487,6 +488,8 @@ MonoBehaviour:
   - {fileID: 643092305}
   - {fileID: 643092304}
   - {fileID: 643092326}
+  - {fileID: 643092331}
+  - {fileID: 643092329}
   - {fileID: 643092303}
 --- !u!114 &643092297
 MonoBehaviour:
@@ -1276,6 +1279,46 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+--- !u!114 &643092329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 643092293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 207aecf668a0345388087ccf522f9957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 35
+  indentLevel: 0
+  duration: 1
+  targetAlpha: 0
+  waitUntilFinished: 1
+  fadeColor: {r: 0, g: 0, b: 0, a: 1}
+  fadeTexture: {fileID: 0}
+--- !u!114 &643092331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 643092293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbd8c931f22994b9d90e2037fffaa770, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 36
+  indentLevel: 0
+  _targetGameObject:
+    gameObjectRef: {fileID: 0}
+    gameObjectVal: {fileID: 1139649263}
+  activeState:
+    booleanRef: {fileID: 0}
+    booleanVal: 0
+  targetGameObjectOLD: {fileID: 0}
 --- !u!1001 &745848085
 PrefabInstance:
   m_ObjectHideFlags: 0
