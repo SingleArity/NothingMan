@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2898983518091644454}
   m_Layer: 0
   m_Name: Exit
-  m_TagString: Untagged
+  m_TagString: Exit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_SortingLayerID: -1173805671
   m_SortingLayer: 1
   m_SortingOrder: 3
-  m_Sprite: {fileID: -8559758241767767326, guid: 3c3cb82763c1d5a4e85866c506c4a9d1,
+  m_Sprite: {fileID: -6351134624973024262, guid: 3c3cb82763c1d5a4e85866c506c4a9d1,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -148,7 +148,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7666051213949713569}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: 0}
+  m_LocalPosition: {x: -1.5, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6574054480861662952}
