@@ -24,7 +24,7 @@ public class WallGrab : Ability
 
     public override void HandleAbility()
     {
-        if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.UpArrow))
+        if (Input.GetKey(KeyCode.UpArrow))
         {
             holdingKey = true;
         }
@@ -45,7 +45,20 @@ public class WallGrab : Ability
                     //cc.moveDisabled = true;
                     grabbingWall = true;
                     cc.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+
+                    if (transform.parent.GetComponentInChildren<Hover>() != null)
+                    {
+                        transform.parent.GetComponentInChildren<Hover>().canUse = false;
+                    }
                 }
+            }
+        }
+        else
+        {
+            //if we have hover, allow it again
+            if (transform.parent.GetComponentInChildren<Hover>() != null)
+            {
+                transform.parent.GetComponentInChildren<Hover>().canUse = true;
             }
         }
 
@@ -54,6 +67,7 @@ public class WallGrab : Ability
         {
             grabbingWall = false;
             cc.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+            
         }
 
         //if we are grabbing a wall and we have jump ability
