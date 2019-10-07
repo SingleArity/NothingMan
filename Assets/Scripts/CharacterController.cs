@@ -24,9 +24,10 @@ public class CharacterController : MonoBehaviour
 
     public GameObject walkingTriggerGO;
 
-    public bool moving, isGrounded, isWalking, facingRight, walled;
+    public bool moving, isGrounded, isWalking, facingRight, walled, moveDisabled = false;
     public LayerMask groundMask, wallMask;
-    
+
+    public string currentlyCollidingTag;
 
     // Start is called before the first frame update
     void Start()
@@ -38,8 +39,12 @@ public class CharacterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         //movement info
-        moveX = Input.GetAxis("Horizontal");
+        if (!moveDisabled)
+            moveX = Input.GetAxis("Horizontal");
+        else
+            moveX = 0f;
 
         //check grounding
         isGrounded = GetComponent<Collider2D>().IsTouchingLayers(groundMask);
@@ -123,10 +128,13 @@ public class CharacterController : MonoBehaviour
             Flip();
         }
 
+        
         string upgradeBits = "" + Convert.ToInt32(upgrades[0])
                                 + Convert.ToInt32(upgrades[1])
                                 + Convert.ToInt32(upgrades[2])
-                                + Convert.ToInt32(upgrades[3]);
+                                + Convert.ToInt32(upgrades[3])
+                                + Convert.ToInt32(upgrades[4]);
+
         Sprite[] bodySprites = Resources.LoadAll<Sprite>("character/body/body_" + upgradeBits);
 
         string currentSpriteName = GetComponent<SpriteRenderer>().sprite.name;
@@ -169,6 +177,8 @@ public class CharacterController : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         CollisionEffect(collision.gameObject.tag);
+        //set the tag, so things can know what we are colliding with at any given time 
+        currentlyCollidingTag = collision.gameObject.tag;
         
     }
 

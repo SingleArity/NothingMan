@@ -26,7 +26,7 @@ public class Jump : Ability
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            DoJump();
+            TryGroundedJump();
         }
     }
 
@@ -37,11 +37,16 @@ public class Jump : Ability
 
     }
 
-    void DoJump()
+    void TryGroundedJump()
     {
         if (character.isGrounded)
         {
             character.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, 80f));
         }
+    }
+
+    public void DoJump(float direction = 0f, float yForce = 80f)
+    {
+        character.GetComponent<Rigidbody2D>().AddForce(new Vector2(direction, yForce));
     }
 }
