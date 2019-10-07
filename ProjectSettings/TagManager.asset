@@ -6,9 +6,13 @@ TagManager:
   tags:
   - Left
   - Right
-  - Top
   - Bottom
   - powerup
+  - Exit
+  - Floor
+  - spawn
+  - walk
+  - corner
   layers:
   - Default
   - TransparentFX
@@ -18,9 +22,9 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
+  - Floor
+  - Wall
+  - Corner
   - 
   - 
   - 

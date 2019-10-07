@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{bd298e63-ee5c-413a-9086-6652c3fafa9e}">
+		<property name="assetPath">
+			<value>Medium Tempo/Medium tempo_PL Dyk Pyk [PL].aif</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>28.800000000000001</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{2518c191-486d-4ebe-9dab-7a5e3dae88da}</destination>
+		</relationship>
+	</object>
+</objects>

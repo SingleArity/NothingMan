@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class MapController : MonoBehaviour
 {
@@ -12,14 +13,24 @@ public class MapController : MonoBehaviour
     {
         foreach(Transform tile in baseMap)
         {
-            if (tile.tag != "powerup")
-            tile.GetComponent<SpriteRenderer>().enabled = false;
+                tile.GetComponent<SpriteRenderer>().enabled = false;
         }
+        baseMap.GetComponent<TilemapRenderer>().enabled = false;
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void EnableFullSight()
+    {
+        foreach (Transform tile in baseMap)
+        {
+            tile.GetComponent<SpriteRenderer>().enabled = true;
+        }
+        baseMap.GetComponent<TilemapRenderer>().enabled = true;
+
     }
 }
