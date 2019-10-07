@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 653790906458865033}
   - component: {fileID: 6378455854213398159}
   - component: {fileID: 5125285191884676088}
+  - component: {fileID: 1469507443}
   m_Layer: 0
   m_Name: Arms
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6466395047829631405}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.75, y: -3.73, z: -25.77728}
+  m_LocalPosition: {x: -0.1, y: -0.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -69,8 +70,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1173805671
   m_SortingLayer: 1
-  m_SortingOrder: 3
-  m_Sprite: {fileID: 8331943998248331797, guid: 3c3cb82763c1d5a4e85866c506c4a9d1,
+  m_SortingOrder: 4
+  m_Sprite: {fileID: -5906598218874874896, guid: 4a52a4c8e56cce545b873d2adbdc73fa,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -94,3 +95,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbb60612ae22fbc4cae131cf174b6565, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  holdingKey: 0
+  grabbingWall: 0
+  canGrab: 1
+--- !u!95 &1469507443
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6466395047829631405}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5dbd941f66b592947906e5ec8d2616bd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

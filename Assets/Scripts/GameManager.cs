@@ -15,9 +15,11 @@ public class GameManager : MonoBehaviour
 
     public CameraFollow mainCam;
 
+    public AudioClip powerUpSound, levelEndSound, levelStartSound, dedSound;
+
     public static GameManager Instance
     {
-        get; 
+        get;
         set;
     }
 
@@ -59,6 +61,7 @@ public class GameManager : MonoBehaviour
         GameObject characterGO = Instantiate(characterPrefab, spawnTile.transform.position, Quaternion.identity);
         character = characterGO.GetComponent<CharacterController>();
         mainCam.target = characterGO.transform;
+        PlaySound(levelStartSound);
     }
 
     // Update is called once per frame
@@ -82,6 +85,19 @@ public class GameManager : MonoBehaviour
         messageGO.SetActive(false);
         messageGO.GetComponent<TextMeshProUGUI>().text = currentMessageText;
 
+    }
+
+    //audio effects
+    public void PlaySound(AudioClip sound)
+    {
+        //StartCoroutine(PlaySoundClip(sound));
+        GetComponent<AudioSource>().clip = sound;
+        GetComponent<AudioSource>().Play();
+    }
+
+    IEnumerator PlaySoundClip(AudioClip sound)
+    {
+        yield return null;
     }
 
 

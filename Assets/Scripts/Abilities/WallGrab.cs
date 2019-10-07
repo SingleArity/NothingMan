@@ -5,7 +5,7 @@ using UnityEngine;
 public class WallGrab : Ability
 {
 
-    //Animator anim;
+    Animator anim;
     CharacterController cc;
 
     public bool holdingKey, grabbingWall, canGrab = true;
@@ -13,6 +13,7 @@ public class WallGrab : Ability
     // Start is called before the first frame update
     void Start()
     {
+        anim = GetComponent<Animator>();
         cc = GetComponentInParent<CharacterController>();
     }
 
@@ -107,7 +108,7 @@ public class WallGrab : Ability
     public override void HandleAnimation()
     {
 
-        //anim.SetBool("Moving", cc.moving);
+        anim.SetBool("Walk", cc.moving);
 
     }
 }

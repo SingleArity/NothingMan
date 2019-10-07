@@ -7,6 +7,7 @@ public class Jump : Ability
 
     Animator anim;
     CharacterController cc;
+    bool canJump = true;
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +25,7 @@ public class Jump : Ability
 
     public override void HandleAbility()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && canJump)
         {
             TryGroundedJump();
         }
@@ -42,11 +43,23 @@ public class Jump : Ability
         if (character.isGrounded)
         {
             character.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, 80f));
+            StartCoroutine(WaitToJumpAgain());
         }
     }
 
     public void DoJump(float direction = 0f, float yForce = 80f)
     {
-        character.GetComponent<Rigidbody2D>().AddForce(new Vector2(direction, yForce));
+        if (canJump)
+        {
+            character.GetComponent<Rigidbody2D>().AddForce(new Vector2(direction, yForce));
+            StartCoroutine(WaitToJumpAgain());
+        }
+    }
+
+    IEnumerator WaitToJumpAgain()
+    {
+        canJump = false;
+        yield return new WaitForSeconds(.2f);
+        canJump = true;
     }
 }
