@@ -14526,6 +14526,7 @@ MonoBehaviour:
   levelEndSound: {fileID: 8300000, guid: 3a8cc0f01675d9e4ba6af18a91ea9d14, type: 3}
   levelStartSound: {fileID: 8300000, guid: 4593e91d881e9814c95cb1585762f353, type: 3}
   dedSound: {fileID: 8300000, guid: 03b1ced53e6c0d6409773891226ca73d, type: 3}
+  characterSpawned: 0
 --- !u!4 &1225155433
 Transform:
   m_ObjectHideFlags: 0
