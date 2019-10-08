@@ -15,9 +15,14 @@ public class GameManager : MonoBehaviour
 
     public CameraFollow mainCam;
 
+    public AudioClip powerUpSound, levelEndSound, levelStartSound, dedSound;
+
+    public bool characterSpawned;
+    public static bool alreadyEnabled = false;
+
     public static GameManager Instance
     {
-        get; 
+        get;
         set;
     }
 
@@ -41,17 +46,24 @@ public class GameManager : MonoBehaviour
 
     void OnEnable()
     {
-        SceneManager.sceneLoaded += OnSceneLoaded;
+        if (!alreadyEnabled)
+        {
+            alreadyEnabled = true;
+            SceneManager.sceneLoaded += OnSceneLoaded;
+        }
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         Debug.Log("SceneLoaded:" + scene.name);
-        SpawnCharacter();
+        //if(!characterSpawned)
+            SpawnCharacter();
     }
 
     private void SpawnCharacter()
     {
+        mainCam = GameObject.FindObjectOfType<CameraFollow>();
+        characterSpawned = true;
         Debug.Log("In Spawn code");
         //spawn tile is tile tagged "spawn"
         GameObject spawnTile = GameObject.FindGameObjectWithTag("spawn");
@@ -59,6 +71,7 @@ public class GameManager : MonoBehaviour
         GameObject characterGO = Instantiate(characterPrefab, spawnTile.transform.position, Quaternion.identity);
         character = characterGO.GetComponent<CharacterController>();
         mainCam.target = characterGO.transform;
+        PlaySound(levelStartSound);
     }
 
     // Update is called once per frame
@@ -69,20 +82,48 @@ public class GameManager : MonoBehaviour
 
     public void NextLevel()
     {
-        levelNum += 1;
-        SceneManager.LoadScene("level" + levelNum);
+        if (levelNum != 6)
+        {
+            levelNum += 1;
+            SceneManager.LoadScene("level" + levelNum);
+        }
+        else
+        {
+            //last level
+            levelNum = 0;
+            Instance.characterSpawned = false;
+            SceneManager.LoadScene("title");
+        }
     }
 
     public IEnumerator ShowFlavorText(string flavorText)
     {
         string currentMessageText = messageGO.GetComponent<TextMeshProUGUI>().text;
-        messageGO.GetComponent<TextMeshProUGUI>().text = flavorText;
-        messageGO.SetActive(true);
+        Instance.messageGO.GetComponent<TextMeshProUGUI>().text = flavorText;
+        Instance.messageGO.SetActive(true);
         yield return new WaitForSeconds(2f);
-        messageGO.SetActive(false);
-        messageGO.GetComponent<TextMeshProUGUI>().text = currentMessageText;
+        Instance.messageGO.SetActive(false);
+        Instance.messageGO.GetComponent<TextMeshProUGUI>().text = currentMessageText;
 
     }
 
+    //audio effects
+    public void PlaySound(AudioClip sound)
+    {
+        //StartCoroutine(PlaySoundClip(sound));
+        Instance.GetComponent<AudioSource>().clip = sound;
+        Instance.GetComponent<AudioSource>().Play();
+    }
 
+    IEnumerator PlaySoundClip(AudioClip sound)
+    {
+        yield return null;
+    }
+
+    public void RestartLevel()
+    {
+        Debug.Log("GM RestartLevel");
+        Instance.characterSpawned = false;
+        SceneManager.LoadScene("level" + levelNum);
+    }
 }

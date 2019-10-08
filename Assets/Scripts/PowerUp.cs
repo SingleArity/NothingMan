@@ -51,6 +51,7 @@ public class PowerUp : MonoBehaviour
                 collider.GetComponent<StudioEventEmitter>().SetParameter(s, 1f);
             }
 
+            gm.PlaySound(gm.powerUpSound);
             collider.GetComponent<CharacterController>().AddPowerUp(this);
         }
     }

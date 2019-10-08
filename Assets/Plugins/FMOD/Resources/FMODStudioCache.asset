@@ -1,5 +1,22 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8968980684437402173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Level1/Powerup3
+  m_EditorClassIdentifier: 
+  Name: Powerup3
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &-8926461633792012340
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33,7 +50,7 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
-  Exists: 0
+  Exists: 1
 --- !u!114 &-7831782574023818601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45,23 +62,6 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: parameter:/Level3/Powerup2
-  m_EditorClassIdentifier: 
-  Name: Powerup2
-  Min: 0
-  Max: 1
-  Default: 0
-  Exists: 1
---- !u!114 &-7404412240377720310
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Level1/Powerup2
   m_EditorClassIdentifier: 
   Name: Powerup2
   Min: 0
@@ -102,23 +102,6 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 0
---- !u!114 &-7006193575903349102
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/BossBattle/Powerup3
-  m_EditorClassIdentifier: 
-  Name: Powerup3
-  Min: 0
-  Max: 1
-  Default: 0
-  Exists: 1
 --- !u!114 &-6999110564740044742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -246,7 +229,24 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
-  Exists: 0
+  Exists: 1
+--- !u!114 &-5967434549513504647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Level1/Powerup1
+  m_EditorClassIdentifier: 
+  Name: Powerup1
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &-5471178124105568403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -281,6 +281,23 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 1
+--- !u!114 &-5121465942011311839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/BossBattle/Powerup1
+  m_EditorClassIdentifier: 
+  Name: Powerup1
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &-4403096169428927595
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -298,6 +315,23 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 0
+--- !u!114 &-4316484828561897176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/BossBattle/Powerup2
+  m_EditorClassIdentifier: 
+  Name: Powerup2
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &-4159735375634747400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -314,7 +348,28 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
-  Exists: 0
+  Exists: 1
+--- !u!114 &-4159583779691744374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: C:/Users/lxpk/Dropbox/Unity Projects/nothingman/Assets/FMOD_Project/Ludum
+    Dare/Build/Desktop/Master.strings.bank
+  SubDir: 
+  lastModified: 637060608819169356
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 1020
+  Exists: 1
 --- !u!114 &-3889317625293374516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -331,7 +386,24 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
-  Exists: 0
+  Exists: 1
+--- !u!114 &-3878674242695298906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Level1/Powerup3
+  m_EditorClassIdentifier: 
+  Name: Powerup3
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &-3664713430644085710
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -367,14 +439,14 @@ MonoBehaviour:
   Path: event:/Level2/Level2
   guid: 96f54dedcdbcf34d86360436f4238566
   Banks:
-  - {fileID: 4988695539360598910}
+  - {fileID: 2079785914039017549}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -1997232313645506323}
-  - {fileID: 58660439117684697}
-  - {fileID: 2969771461273250815}
+  - {fileID: -2346341494083496824}
+  - {fileID: 1746767711443925089}
+  - {fileID: -1451892468484230515}
   MinDistance: 0
   MaxDistance: 0
   Length: 38400
@@ -448,8 +520,8 @@ MonoBehaviour:
   FileSizes:
   - Name: Desktop
     Value: 8920640
-  Exists: 0
---- !u!114 &-2256219271664809687
+  Exists: 1
+--- !u!114 &-3095805479768795945
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -459,9 +531,26 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Level1/Powerup3
+  m_Name: parameter:/BossBattle/Powerup3
   m_EditorClassIdentifier: 
   Name: Powerup3
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
+--- !u!114 &-2346341494083496824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Level2/Powerup2
+  m_EditorClassIdentifier: 
+  Name: Powerup2
   Min: 0
   Max: 1
   Default: 0
@@ -481,14 +570,14 @@ MonoBehaviour:
   Path: event:/Level1/Level1
   guid: 256a5dd5ad7dfa45878ea419c27119ab
   Banks:
-  - {fileID: 4988695539360598910}
+  - {fileID: 2079785914039017549}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 1308851464179999427}
-  - {fileID: -7404412240377720310}
-  - {fileID: -2256219271664809687}
+  - {fileID: -5967434549513504647}
+  - {fileID: 2759251460569889570}
+  - {fileID: -3878674242695298906}
   MinDistance: 0
   MaxDistance: 0
   Length: 72818
@@ -508,7 +597,7 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
-  Exists: 0
+  Exists: 1
 --- !u!114 &-2100822185389824301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -524,18 +613,18 @@ MonoBehaviour:
   Path: event:/Level3/Level3
   guid: 30f7c9d4580b594083a450b2386eaec3
   Banks:
-  - {fileID: 4988695539360598910}
+  - {fileID: 2079785914039017549}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 693255268841284601}
-  - {fileID: 5817317149030015367}
-  - {fileID: 1227540573434472485}
+  - {fileID: 7231318185481534419}
+  - {fileID: 990835861052380242}
+  - {fileID: 2986068326770850476}
   MinDistance: 0
   MaxDistance: 0
   Length: 33453
---- !u!114 &-1997232313645506323
+--- !u!114 &-2049684541341558613
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -544,13 +633,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Level2/Powerup2
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
   m_EditorClassIdentifier: 
-  Name: Powerup2
-  Min: 0
-  Max: 1
-  Default: 0
+  Path: C:/Users/Mark/Documents/NothingMan/Assets/FMOD_Project/Ludum Dare/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637058894698863949
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 8920640
   Exists: 1
 --- !u!114 &-1592453704856050338
 MonoBehaviour:
@@ -565,6 +657,23 @@ MonoBehaviour:
   m_Name: parameter:/Level1/Powerup2
   m_EditorClassIdentifier: 
   Name: Powerup2
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
+--- !u!114 &-1451892468484230515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Level2/Powerup1
+  m_EditorClassIdentifier: 
+  Name: Powerup1
   Min: 0
   Max: 1
   Default: 0
@@ -586,6 +695,23 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 1
+--- !u!114 &-784895974692701090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/BossBattle/Powerup2
+  m_EditorClassIdentifier: 
+  Name: Powerup2
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -599,8 +725,8 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: 4894881951943260784}
-  - {fileID: 4988695539360598910}
+  - {fileID: -4159583779691744374}
+  - {fileID: 2079785914039017549}
   EditorEvents:
   - {fileID: -2181486070376163217}
   - {fileID: -2100822185389824301}
@@ -608,45 +734,11 @@ MonoBehaviour:
   - {fileID: 4106859835912531148}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 4988695539360598910}
+  - {fileID: 2079785914039017549}
   StringsBanks:
-  - {fileID: 4894881951943260784}
+  - {fileID: -4159583779691744374}
   stringsBankWriteTime: 637060608819169356
   cacheVersion: 3
---- !u!114 &58660439117684697
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Level2/Powerup3
-  m_EditorClassIdentifier: 
-  Name: Powerup3
-  Min: 0
-  Max: 1
-  Default: 0
-  Exists: 1
---- !u!114 &693255268841284601
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Level3/Powerup1
-  m_EditorClassIdentifier: 
-  Name: Powerup1
-  Min: 0
-  Max: 1
-  Default: 0
-  Exists: 1
 --- !u!114 &711257846113319287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -667,7 +759,7 @@ MonoBehaviour:
   - Name: Desktop
     Value: 1020
   Exists: 1
---- !u!114 &991479084857865334
+--- !u!114 &990835861052380242
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -683,25 +775,8 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
-  Exists: 0
---- !u!114 &1227540573434472485
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Level3/Powerup3
-  m_EditorClassIdentifier: 
-  Name: Powerup3
-  Min: 0
-  Max: 1
-  Default: 0
   Exists: 1
---- !u!114 &1308851464179999427
+--- !u!114 &991479084857865334
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -711,9 +786,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Level1/Powerup1
+  m_Name: parameter:/Level3/Powerup2
   m_EditorClassIdentifier: 
-  Name: Powerup1
+  Name: Powerup2
   Min: 0
   Max: 1
   Default: 0
@@ -734,7 +809,24 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
-  Exists: 0
+  Exists: 1
+--- !u!114 &1746767711443925089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Level2/Powerup3
+  m_EditorClassIdentifier: 
+  Name: Powerup3
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &1858539888576486745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -751,7 +843,7 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
-  Exists: 0
+  Exists: 1
 --- !u!114 &2005270661227623315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -769,7 +861,7 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 1
---- !u!114 &2194681873632489111
+--- !u!114 &2079785914039017549
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -778,13 +870,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/BossBattle/Powerup2
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
   m_EditorClassIdentifier: 
-  Name: Powerup2
-  Min: 0
-  Max: 1
-  Default: 0
+  Path: C:/Users/lxpk/Dropbox/Unity Projects/nothingman/Assets/FMOD_Project/Ludum
+    Dare/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637060608819129455
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 8920640
   Exists: 1
 --- !u!114 &2399879943678262501
 MonoBehaviour:
@@ -803,6 +899,40 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 0
+--- !u!114 &2689116659817960319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Level3/Powerup2
+  m_EditorClassIdentifier: 
+  Name: Powerup2
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
+--- !u!114 &2759251460569889570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Level1/Powerup2
+  m_EditorClassIdentifier: 
+  Name: Powerup2
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &2944994516669120354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -816,23 +946,6 @@ MonoBehaviour:
   m_Name: parameter:/BossBattle/Powerup3
   m_EditorClassIdentifier: 
   Name: Powerup3
-  Min: 0
-  Max: 1
-  Default: 0
-  Exists: 1
---- !u!114 &2969771461273250815
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Level2/Powerup1
-  m_EditorClassIdentifier: 
-  Name: Powerup1
   Min: 0
   Max: 1
   Default: 0
@@ -854,6 +967,43 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 0
+--- !u!114 &2986068326770850476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Level3/Powerup3
+  m_EditorClassIdentifier: 
+  Name: Powerup3
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
+--- !u!114 &3029439913755603088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: C:/Users/Mark/Documents/NothingMan/Assets/FMOD_Project/Ludum Dare/Build/Desktop/Master.strings.bank
+  SubDir: 
+  lastModified: 637058894699911154
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 1020
+  Exists: 1
 --- !u!114 &3082438974488562498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -887,7 +1037,7 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
-  Exists: 0
+  Exists: 1
 --- !u!114 &3659198167701699411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -922,6 +1072,23 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 0
+--- !u!114 &3981945575517682186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Level1/Powerup1
+  m_EditorClassIdentifier: 
+  Name: Powerup1
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &4106859835912531148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -937,14 +1104,14 @@ MonoBehaviour:
   Path: event:/Boss Battle/BossBattle
   guid: e152810b3a0a914c99ba445b8588ae1c
   Banks:
-  - {fileID: 4988695539360598910}
+  - {fileID: 2079785914039017549}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -7006193575903349102}
-  - {fileID: 2194681873632489111}
-  - {fileID: 5335592281567789145}
+  - {fileID: 5498192875373681965}
+  - {fileID: -784895974692701090}
+  - {fileID: 8019921600076906082}
   MinDistance: 0
   MaxDistance: 0
   Length: 17091
@@ -967,7 +1134,7 @@ MonoBehaviour:
   FileSizes:
   - Name: Desktop
     Value: 1020
-  Exists: 0
+  Exists: 1
 --- !u!114 &4280749643806175484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1002,6 +1169,23 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 1
+--- !u!114 &4691596200767352481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Level2/Powerup2
+  m_EditorClassIdentifier: 
+  Name: Powerup2
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &4834034592788731036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1018,48 +1202,6 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
-  Exists: 0
---- !u!114 &4894881951943260784
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.strings.bank
-  m_EditorClassIdentifier: 
-  Path: C:/Users/lxpk/Dropbox/Unity Projects/nothingman/Assets/FMOD_Project/Ludum
-    Dare/Build/Desktop/Master.strings.bank
-  SubDir: 
-  lastModified: 637060608819169356
-  LoadResult: 0
-  FileSizes:
-  - Name: Desktop
-    Value: 1020
-  Exists: 1
---- !u!114 &4988695539360598910
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
-  m_EditorClassIdentifier: 
-  Path: C:/Users/lxpk/Dropbox/Unity Projects/nothingman/Assets/FMOD_Project/Ludum
-    Dare/Build/Desktop/Master.bank
-  SubDir: 
-  lastModified: 637060608819129455
-  LoadResult: 0
-  FileSizes:
-  - Name: Desktop
-    Value: 8920640
   Exists: 1
 --- !u!114 &5077079434723442510
 MonoBehaviour:
@@ -1078,6 +1220,23 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 0
+--- !u!114 &5143002486707449554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Level2/Powerup3
+  m_EditorClassIdentifier: 
+  Name: Powerup3
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &5181088853547623062
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1095,7 +1254,7 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 1
---- !u!114 &5335592281567789145
+--- !u!114 &5498192875373681965
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1105,26 +1264,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/BossBattle/Powerup1
+  m_Name: parameter:/BossBattle/Powerup3
   m_EditorClassIdentifier: 
-  Name: Powerup1
-  Min: 0
-  Max: 1
-  Default: 0
-  Exists: 1
---- !u!114 &5817317149030015367
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Level3/Powerup2
-  m_EditorClassIdentifier: 
-  Name: Powerup2
+  Name: Powerup3
   Min: 0
   Max: 1
   Default: 0
@@ -1183,6 +1325,74 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 1
+--- !u!114 &6777968567425902817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Level3/Powerup1
+  m_EditorClassIdentifier: 
+  Name: Powerup1
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
+--- !u!114 &6919082309002060058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Level2/Powerup1
+  m_EditorClassIdentifier: 
+  Name: Powerup1
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
+--- !u!114 &7231318185481534419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Level3/Powerup1
+  m_EditorClassIdentifier: 
+  Name: Powerup1
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
+--- !u!114 &7608737743946413524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Level3/Powerup3
+  m_EditorClassIdentifier: 
+  Name: Powerup3
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &7712897896285606151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1200,6 +1410,23 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 0
+--- !u!114 &7819693991520230100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Level1/Powerup2
+  m_EditorClassIdentifier: 
+  Name: Powerup2
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &7959730799432667935
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1213,6 +1440,23 @@ MonoBehaviour:
   m_Name: parameter:/Level3/Powerup3
   m_EditorClassIdentifier: 
   Name: Powerup3
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
+--- !u!114 &8019921600076906082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/BossBattle/Powerup1
+  m_EditorClassIdentifier: 
+  Name: Powerup1
   Min: 0
   Max: 1
   Default: 0
@@ -1267,7 +1511,7 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
-  Exists: 0
+  Exists: 1
 --- !u!114 &9015658084663708365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1284,7 +1528,7 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
-  Exists: 0
+  Exists: 1
 --- !u!114 &9071852319750492332
 MonoBehaviour:
   m_ObjectHideFlags: 0

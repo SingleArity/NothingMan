@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8907731702444228335}
   - component: {fileID: 2491771159197606278}
   - component: {fileID: 6516362490728715148}
+  - component: {fileID: 8546899809315019195}
   m_Layer: 5
   m_Name: DeathSpikes
   m_TagString: Untagged
@@ -132,3 +133,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.75189966}
   m_EdgeRadius: 0
+--- !u!114 &8546899809315019195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6142583082501195829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de43d344a51b8e44ebff095a5457281c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

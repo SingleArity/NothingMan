@@ -35,6 +35,7 @@ public class Exit : MonoBehaviour
     public IEnumerator ExitLevel()
     {
         DisplayMessage();
+        gm.PlaySound(gm.levelEndSound);
         while(!Input.GetKeyDown(KeyCode.Return) && !Input.GetKeyDown(KeyCode.Space))
             yield return null;
         HideMessage();

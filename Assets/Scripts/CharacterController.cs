@@ -195,6 +195,12 @@ public class CharacterController : MonoBehaviour
         anim.SetBool("Death", true);
     }
 
+    public void Respawn()
+    {
+        Debug.Log("Respawning!!!");
+        GameManager.Instance.RestartLevel();
+    }
+
     //environment tile collision
 
     private void OnCollisionEnter2D(Collision2D collision)

@@ -9,15 +9,36 @@ EditorBuildSettings:
     path: Assets/Scenes/Intro.unity
     guid: 0f9d9af5924163341985418384f7f1ba
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
+    path: Assets/Scenes/title.unity
+    guid: d354b7be709ae144488065b023fa2da2
   - enabled: 1
     path: Assets/Scenes/level0.unity
     guid: f8c9961aed2dd4e42b8c52a88df1000d
+  - enabled: 0
+    path: 
+    guid: 09f8c850cee894f4da60c80e4acba714
+  - enabled: 0
+    path: 
+    guid: d0fa5502884c7c448825255bcf0bc409
   - enabled: 1
     path: Assets/Scenes/level1.unity
     guid: 61ff50b1e09884cdface46ea7ff1ba5a
   - enabled: 1
     path: Assets/Scenes/level2.unity
     guid: d91e14a535f124a90be9fe97dd9eadb2
+  - enabled: 1
+    path: Assets/Scenes/level3.unity
+    guid: 9c4a775829f5a2b4f8d8e2b80a0ffd1e
+  - enabled: 1
+    path: Assets/Scenes/level4.unity
+    guid: cccd155d9ee794641b827ec56dfed9d1
+  - enabled: 1
+    path: Assets/Scenes/level5.unity
+    guid: ed05c23a99d4a154da0a468cc33e3325
+  - enabled: 1
+    path: Assets/Scenes/level6.unity
+    guid: fa4df8af1abb9094a8c93c96ce32007a
+  - enabled: 0
+    path: 
+    guid: fbd5846b381b2b542923f749e8fc8a1f
   m_configObjects: {}
