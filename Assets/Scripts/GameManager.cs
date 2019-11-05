@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
 
     public AudioClip powerUpSound, levelEndSound, levelStartSound, dedSound;
 
-    public bool characterSpawned;
+    public bool characterSpawned, flavorTextCRRunning = false;
     public static bool alreadyEnabled = false;
 
     public static GameManager Instance
@@ -55,6 +55,9 @@ public class GameManager : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        //reset global lift movement loop timer
+        LiftPiece.loopTime = 0f;
+
         Debug.Log("SceneLoaded:" + scene.name);
         //if(!characterSpawned)
             SpawnCharacter();
@@ -98,12 +101,20 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator ShowFlavorText(string flavorText)
     {
-        string currentMessageText = messageGO.GetComponent<TextMeshProUGUI>().text;
+        //if another instance of this flavor text routine is running, wait
+        while (flavorTextCRRunning) yield return null;
+
+        //now start this one
+        flavorTextCRRunning = true;
+        //always return to this text as the base text
+        string returnToText = "Congrats!\n\n\n\n\nYou are Something";
         Instance.messageGO.GetComponent<TextMeshProUGUI>().text = flavorText;
         Instance.messageGO.SetActive(true);
         yield return new WaitForSeconds(2f);
         Instance.messageGO.SetActive(false);
-        Instance.messageGO.GetComponent<TextMeshProUGUI>().text = currentMessageText;
+        Instance.messageGO.GetComponent<TextMeshProUGUI>().text = returnToText;
+        //now done, set flag back
+        flavorTextCRRunning = false;
 
     }
 

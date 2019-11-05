@@ -44,6 +44,7 @@ public class PowerUp : MonoBehaviour
         {
             if(flavorText != null)
             {
+                
                 gm.StartCoroutine(gm.ShowFlavorText(flavorText));
             }
             foreach (string s in soundParams)
