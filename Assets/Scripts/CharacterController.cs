@@ -9,6 +9,7 @@ public class CharacterController : MonoBehaviour
     public float moveSpeed, moveX;
 
     Animator anim;
+    Rigidbody2D rigidBody;
 
     public Sprite mask_ringright, mask_ringleft, mask_ringtop, mask_ringbottom, mask_full;
 
@@ -34,6 +35,7 @@ public class CharacterController : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
+        rigidBody = GetComponent<Rigidbody2D>();
         abilities = new List<Ability>();
         isPlayerInput = true;
     }
@@ -64,7 +66,17 @@ public class CharacterController : MonoBehaviour
         //if we aren't on a wall
         if (!walled)
         {
-            TryWalking();
+            if (GetComponentInChildren<WallGrab>() == null)
+            {
+                TryWalking();
+            }
+            else
+            {
+                //don't set rigidbody velocity if just jumped off a wall
+                if (!GetComponentInChildren<WallGrab>().canGrab) KeepVelocity();
+                else TryWalking();
+            }
+                
         }
         //or if we are walled but also grounded
         else if (isGrounded)
@@ -113,10 +125,16 @@ public class CharacterController : MonoBehaviour
 
     void TryWalking()
     {
-        if (facingRight)
-            transform.Translate(new Vector3(moveX * moveSpeed, 0f, 0f));
-        else
-            transform.Translate(new Vector3(moveX * moveSpeed * -1f, 0f, 0f));
+        //if (facingRight)
+            rigidBody.velocity = new Vector2(moveX * moveSpeed, rigidBody.velocity.y);
+            //transform.Translate(new Vector3(moveX * moveSpeed, 0f, 0f));
+       // else
+           // transform.Translate(new Vector3(moveX * moveSpeed * -1f, 0f, 0f));
+    }
+
+    void KeepVelocity()
+    {
+
     }
 
     //animation handling
@@ -135,6 +153,9 @@ public class CharacterController : MonoBehaviour
     
     void HandleAnimation()
     {
+
+        if (walled) anim.SetBool("Moving", false);
+
         //flip or not?
         if (moveX > 0 && !facingRight)
         {

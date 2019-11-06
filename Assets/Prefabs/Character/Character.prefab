@@ -240,7 +240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de4eb8b567fed894ea8a1da769260d98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0.15
+  moveSpeed: 10
   moveX: 0
   mask_ringright: {fileID: 21300000, guid: 8ec5f7ee9e464544c9f7b81e3b843a04, type: 3}
   mask_ringleft: {fileID: 21300000, guid: c41039dc12375894e8054aaa37765548, type: 3}

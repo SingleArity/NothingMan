@@ -95,7 +95,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbb60612ae22fbc4cae131cf174b6565, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  holdingKey: 0
+  holdingLeft: 0
+  holdingRight: 0
   grabbingWall: 0
   canGrab: 1
 --- !u!95 &1469507443

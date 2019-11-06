@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3697460475621145421}
   - component: {fileID: 2716329873338851258}
   m_Layer: 0
-  m_Name: Legs 1
+  m_Name: Eyes
   m_TagString: powerup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -133,3 +133,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   index: 1
   soundParams: []
+  flavorText: 
