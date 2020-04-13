@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Tail : Ability
 {
-    //Animator anim;
+    Animator anim;
     CharacterController cc;
 
     bool alreadyJumped;
@@ -13,6 +13,7 @@ public class Tail : Ability
     void Start()
     {    
         cc = GetComponentInParent<CharacterController>();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -36,7 +37,7 @@ public class Tail : Ability
     public override void HandleAnimation()
     {
 
-        //anim.SetBool("Moving", cc.moving);
+        anim.SetBool("Walk", cc.moving);
 
     }
 
@@ -45,8 +46,29 @@ public class Tail : Ability
         //if we are not on ground and haven't double jumped already
         if (!character.isGrounded && !alreadyJumped)
         {
-            alreadyJumped = true;
-            character.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, 40f));
+            if (HasArms()) {
+                if (!transform.parent.GetComponentInChildren<WallGrab>().grabbingWall && transform.parent.GetComponentInChildren<WallGrab>().canJump)
+                {
+                    DoJump();
+                }
+            }
+            else
+            {
+                DoJump();
+            }
         }
+    }
+
+    void DoJump()
+    {
+        alreadyJumped = true;
+        character.GetComponent<Rigidbody2D>().velocity = new Vector3(character.GetComponent<Rigidbody2D>().velocity.x, 0f, 0f);
+        character.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, 80f));
+        anim.SetTrigger("Bounce");
+    }
+
+    bool HasArms()
+    {
+        return transform.parent.GetComponentInChildren<WallGrab>() != null;
     }
 }

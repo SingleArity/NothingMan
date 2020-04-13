@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 5894872459910254129}
   - component: {fileID: 1098323811678672618}
   - component: {fileID: 5341469314821474473}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: BottomRight
-  m_TagString: corner
+  m_TagString: Right
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

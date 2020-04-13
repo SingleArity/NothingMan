@@ -11,12 +11,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/level0.unity
     guid: f8c9961aed2dd4e42b8c52a88df1000d
-  - enabled: 0
-    path: Assets/__DELETED_GUID_Trash/09f8c850cee894f4da60c80e4acba714
-    guid: 09f8c850cee894f4da60c80e4acba714
-  - enabled: 0
-    path: Assets/__DELETED_GUID_Trash/d0fa5502884c7c448825255bcf0bc409
-    guid: d0fa5502884c7c448825255bcf0bc409
   - enabled: 1
     path: Assets/Scenes/level1.unity
     guid: 61ff50b1e09884cdface46ea7ff1ba5a
@@ -35,7 +29,21 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/level6.unity
     guid: fa4df8af1abb9094a8c93c96ce32007a
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/level7.unity
-    guid: fbd5846b381b2b542923f749e8fc8a1f
-  m_configObjects: {}
+    guid: 47b855e81ab00514a8fa9cfb594198b7
+  - enabled: 1
+    path: Assets/Scenes/level8.unity
+    guid: bdd51fbb36223ba41bd47a6c2e0f206a
+  - enabled: 1
+    path: Assets/Scenes/level9.unity
+    guid: 39a538d3364feca43806e6a0f4387e38
+  - enabled: 1
+    path: Assets/Scenes/demothankyou.unity
+    guid: d3cc455b00ebaff4f8d7d83f6a5c79b3
+  - enabled: 1
+    path: Assets/Scenes/worldmap.unity
+    guid: 0063f2a6a692f67448889286a823ab6b
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: 400c4b4d9ec0f964c84d24b74e01531f,
+      type: 2}

@@ -27,7 +27,7 @@ public class Exit : MonoBehaviour
         CharacterController player = collision.gameObject.GetComponent<CharacterController>();
         if (player)
         {
-            player.Exit();
+            player.Exit(transform);
             StartCoroutine(ExitLevel());
         }
     }
@@ -36,10 +36,14 @@ public class Exit : MonoBehaviour
     {
         DisplayMessage();
         gm.PlaySound(gm.levelEndSound);
+        
         while(!Input.GetKeyDown(KeyCode.Return) && !Input.GetKeyDown(KeyCode.Space))
             yield return null;
         HideMessage();
-        gm.NextLevel();
+        if (Input.GetKeyDown(KeyCode.Return))
+            gm.NextLevel();
+        else if (Input.GetKeyDown(KeyCode.Space))
+            gm.BackToMap();
     }
 
     public void DisplayMessage()

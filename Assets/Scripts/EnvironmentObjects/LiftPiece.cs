@@ -9,7 +9,7 @@ public class LiftPiece : MonoBehaviour
     public static float loopTime;
 
 
-    public float loopLength, loopPercent, yPosition, maxHeight;
+    public float loopLength, loopPercent, startOffsetPercent, yPosition, maxHeight;
 
     float startY;
 
@@ -28,7 +28,8 @@ public class LiftPiece : MonoBehaviour
     private void FixedUpdate()
     {
         //how far into the current loop we are
-        loopPercent = ((loopTime % loopLength) / loopLength);
+        //startOffsetPercent * loopLength represents our actual time offset for the loop
+        loopPercent = (((loopTime+(startOffsetPercent*loopLength)) % loopLength) / loopLength);
 
         //the lift loop is an up and down motion, halfway through means it is at its top apex
         if(loopPercent < .5f)
@@ -40,5 +41,14 @@ public class LiftPiece : MonoBehaviour
             yPosition = Mathf.Abs((2f * loopPercent) - 2f) * maxHeight;
         }
         transform.localPosition = new Vector3(transform.localPosition.x, startY + yPosition, 0f);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        //enabled vision on object if touched by player
+        //if(collision.gameObject.tag == "Player")
+        //{
+        //    GetComponent<SpriteRenderer>().enabled = true;
+        //}
     }
 }

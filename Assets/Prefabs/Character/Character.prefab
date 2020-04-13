@@ -261,14 +261,18 @@ MonoBehaviour:
   isWalking: 0
   facingRight: 1
   walled: 0
+  cornerWalled: 0
   moveDisabled: 0
   groundMask:
     serializedVersion: 2
     m_Bits: 1280
   wallMask:
     serializedVersion: 2
-    m_Bits: 1536
+    m_Bits: 512
   currentlyCollidingTag: 
+  currentlyCollidingName: 
+  playerActions: {fileID: -944628639613478452, guid: 90a7c128347a85a4399e13778e9d880c,
+    type: 3}
 --- !u!212 &4913327423503097070
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using Com.LuisPedroFonseca.ProCamera2D;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class GameManager : MonoBehaviour
 
     CharacterController character;
 
-    public CameraFollow mainCam;
+    public ProCamera2D mainCam;
 
     public AudioClip powerUpSound, levelEndSound, levelStartSound, dedSound;
 
@@ -35,11 +36,17 @@ public class GameManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(this.gameObject);
             DontDestroyOnLoad(messageGO.transform.parent);
+            mainCam = GameObject.FindObjectOfType<ProCamera2D>();
+            DontDestroyOnLoad(mainCam.gameObject);
         }
         //if there is already an instance, destroy this object, don't use it!
         else
         {
+            Destroy(messageGO.transform.parent.gameObject);
             Destroy(gameObject);
+            //also destroy other camera
+            foreach (ProCamera2D cam in GameObject.FindObjectsOfType<ProCamera2D>())
+                if (cam != mainCam) Destroy(cam.gameObject);
         }
         levelNum = 0;
     }
@@ -60,20 +67,26 @@ public class GameManager : MonoBehaviour
 
         Debug.Log("SceneLoaded:" + scene.name);
         //if(!characterSpawned)
+        if(scene.name.Contains("level"))
             SpawnCharacter();
     }
 
     private void SpawnCharacter()
     {
-        mainCam = GameObject.FindObjectOfType<CameraFollow>();
+        //do we need this? -> mainCam = GameObject.FindObjectOfType<ProCamera2D>();
         characterSpawned = true;
         Debug.Log("In Spawn code");
+        Debug.Log("level:" + SceneManager.GetActiveScene().name);
         //spawn tile is tile tagged "spawn"
         GameObject spawnTile = GameObject.FindGameObjectWithTag("spawn");
         //instantiate player object at spawn tile
-        GameObject characterGO = Instantiate(characterPrefab, spawnTile.transform.position, Quaternion.identity);
+        GameObject characterGO = Instantiate(characterPrefab, spawnTile.transform.position + new Vector3(0f,.5f,0f), Quaternion.identity);
         character = characterGO.GetComponent<CharacterController>();
-        mainCam.target = characterGO.transform;
+        mainCam.RemoveAllCameraTargets();
+        mainCam.AddCameraTarget(character.transform);
+        mainCam.Reset();
+        ProCamera2DCinematics cinematic = mainCam.GetComponent<ProCamera2DCinematics>();
+        cinematic.OnCinematicFinished.RemoveAllListeners();
         PlaySound(levelStartSound);
     }
 
@@ -85,7 +98,7 @@ public class GameManager : MonoBehaviour
 
     public void NextLevel()
     {
-        if (levelNum != 6)
+        if (levelNum != 9)
         {
             levelNum += 1;
             SceneManager.LoadScene("level" + levelNum);
@@ -95,8 +108,14 @@ public class GameManager : MonoBehaviour
             //last level
             levelNum = 0;
             Instance.characterSpawned = false;
-            SceneManager.LoadScene("title");
+            Destroy(GameObject.FindObjectOfType<CameraFollow>().gameObject);
+            SceneManager.LoadScene("demothankyou");
         }
+    }
+
+    public void BackToMap()
+    {
+        SceneManager.LoadScene("worldmap");
     }
 
     public IEnumerator ShowFlavorText(string flavorText)
@@ -107,7 +126,7 @@ public class GameManager : MonoBehaviour
         //now start this one
         flavorTextCRRunning = true;
         //always return to this text as the base text
-        string returnToText = "Congrats!\n\n\n\n\nYou are Something";
+        string returnToText = "You were something!\n\n\n\nNow you are nothing";
         Instance.messageGO.GetComponent<TextMeshProUGUI>().text = flavorText;
         Instance.messageGO.SetActive(true);
         yield return new WaitForSeconds(2f);
@@ -116,6 +135,52 @@ public class GameManager : MonoBehaviour
         //now done, set flag back
         flavorTextCRRunning = false;
 
+    }
+
+    public void DeltaGain(Delta d)
+    {
+        Debug.Log("Found a delta");
+        d.transform.position = new Vector3(character.transform.position.x, character.transform.position.y + 1.5f, 0f);
+        d.isFloating = false;
+        character.moveDisabled = true;
+        DeltaCinematic(d);
+    }
+
+    public void DeltaCinematic(Delta d)
+    {
+        ProCamera2DCinematics cinematic = mainCam.GetComponent<ProCamera2DCinematics>();
+        cinematic.AddCinematicTarget(d.transform);
+        Debug.Log("delta objct? " +d);
+        Debug.Log("delta gameobj " + d.gameObject);
+        cinematic.OnCinematicFinished.AddListener(delegate { Debug.Log("d? "+d); DestroyObject(d.gameObject); });
+        cinematic.OnCinematicFinished.AddListener(EnablePlayer);
+        cinematic.OnCinematicFinished.AddListener(RemoveCinematicEventListeners);
+        //this is for parallax sub cameras
+        /*foreach (PixelPerfectCamera cam in mainProCam.GetComponentsInChildren<PixelPerfectCamera>())
+        {
+
+            cam.enabled = false;
+        }*/
+        cinematic.Play();
+    }
+
+    public void EnablePlayer()
+    {
+        Debug.Log("enable player second?");
+        character.moveDisabled = false;
+    }
+
+    public void DestroyObject(GameObject o)
+    {
+        Debug.Log("destroying object, first?");
+        Destroy(o);
+    }
+
+    public void RemoveCinematicEventListeners()
+    {
+        Debug.Log("remove listeners third?");
+        ProCamera2DCinematics cinematic = mainCam.GetComponent<ProCamera2DCinematics>();
+        cinematic.OnCinematicFinished.RemoveAllListeners();
     }
 
     //audio effects

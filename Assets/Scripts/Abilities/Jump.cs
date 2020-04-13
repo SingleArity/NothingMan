@@ -42,8 +42,30 @@ public class Jump : Ability
     {
         if (character.isGrounded)
         {
-            character.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, 80f));
-            StartCoroutine(WaitToJumpAgain());
+            if (character.walled)
+            {
+                //if walled, jump if we don't have arms
+                if (character.GetComponentInChildren<WallGrab>() == null)
+                {
+                    character.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, 80f));
+                    StartCoroutine(WaitForNextJump());
+                }
+                //if we do have arms, only jump if we aren't grabbing the wall (we might be standing in a corner)
+                else
+                {
+                    if (!character.GetComponentInChildren<WallGrab>().grabbingWall)
+                    {
+                        //check to see if this is happening alongside wallgrab
+                        character.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, 80f));
+                        StartCoroutine(WaitForNextJump());
+                    }
+                }
+            }
+            else
+            {
+                character.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, 80f));
+                StartCoroutine(WaitForNextJump());
+            }
         }
     }
 
@@ -52,14 +74,14 @@ public class Jump : Ability
         if (canJump)
         {
             character.GetComponent<Rigidbody2D>().AddForce(new Vector2(direction, yForce));
-            StartCoroutine(WaitToJumpAgain());
+            StartCoroutine(WaitForNextJump());
         }
     }
 
-    IEnumerator WaitToJumpAgain()
+    public IEnumerator WaitForNextJump()
     {
         canJump = false;
-        yield return new WaitForSeconds(.2f);
+        yield return new WaitForSeconds(.3f);
         canJump = true;
     }
 }

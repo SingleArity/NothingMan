@@ -16,6 +16,7 @@ public class MapController : MonoBehaviour
     {
         foreach(Transform tile in baseMap)
         {
+                if(tile.tag != "visible")
                 tile.GetComponent<SpriteRenderer>().enabled = false;
         }
         baseMap.GetComponent<TilemapRenderer>().enabled = false;
@@ -32,8 +33,9 @@ public class MapController : MonoBehaviour
             fullInvis = true;
             foreach (Transform tile in baseMap)
             {
-                Debug.Log("invis tile:" + tile.gameObject.name);
-                tile.GetComponent<SpriteRenderer>().enabled = false;
+                //Debug.Log("invis tile:" + tile.gameObject.name);
+                if (tile.tag != "visible")
+                    tile.GetComponent<SpriteRenderer>().enabled = false;
             }
             baseMap.GetComponent<TilemapRenderer>().enabled = false;
         }

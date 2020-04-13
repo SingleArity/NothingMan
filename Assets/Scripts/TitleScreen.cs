@@ -19,15 +19,15 @@ public class TitleScreen : MonoBehaviour
     {
         if (state == 0)
         {
-            if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow) ||
-                    Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.A) ||
+                Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.Space))
             {
                 GetComponent<Animator>().SetBool("Bloop", true);
             }
         }else if(state == 1)
         {
-            if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow) ||
-                    Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.A) ||
+                Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.Space))
             {
                 GetComponent<Animator>().SetBool("Prompt", true);
                 SetState(2);
