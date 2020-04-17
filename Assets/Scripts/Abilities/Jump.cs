@@ -25,7 +25,7 @@ public class Jump : Ability
 
     public override void HandleAbility()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && canJump)
+        if (InputManager.gamepad.buttonSouth.wasPressedThisFrame && canJump)//(Input.GetKeyDown(KeyCode.Space) && canJump)
         {
             TryGroundedJump();
         }
@@ -35,7 +35,7 @@ public class Jump : Ability
     {
         
         anim.SetBool("Moving", cc.moving);
-
+        anim.speed = cc.accelTimer * 2f;
     }
 
     void TryGroundedJump()

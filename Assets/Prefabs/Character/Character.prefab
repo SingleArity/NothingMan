@@ -240,8 +240,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de4eb8b567fed894ea8a1da769260d98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
+  moveSpeed: 7
   moveX: 0
+  prevMoveX: 0
+  accelTimer: 0
+  momentum: 0
   mask_ringright: {fileID: 21300000, guid: 8ec5f7ee9e464544c9f7b81e3b843a04, type: 3}
   mask_ringleft: {fileID: 21300000, guid: c41039dc12375894e8054aaa37765548, type: 3}
   mask_ringtop: {fileID: 21300000, guid: b0124076629fd2142a8e61dac5512862, type: 3}

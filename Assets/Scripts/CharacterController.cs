@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 
 public class CharacterController : MonoBehaviour
 {
+    Gamepad gamepad;
 
     public float moveSpeed, moveX, prevMoveX, accelTimer, momentum;
 
@@ -50,12 +51,14 @@ public class CharacterController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gamepad = Gamepad.current;
         anim = GetComponent<Animator>();
         rigidBody = GetComponent<Rigidbody2D>();
         abilities = new List<Ability>();
         isPlayerInput = true;
         currentCollisions = new List<String>();
         accelTimer = 0f;
+        
     }
 
     // Update is called once per frame
@@ -67,7 +70,15 @@ public class CharacterController : MonoBehaviour
         }
         //movement info
         if (!moveDisabled)
+        {
+            //moveX is either the horizontal axis (arrow keys or left analog stick) OR the dpad
             moveX = Input.GetAxisRaw("Horizontal");
+            //if the dpad has input left or right, use it for moveX
+            if (gamepad != null && gamepad.dpad.x.ReadValue() != 0f)
+            {
+                moveX = gamepad.dpad.x.ReadValue();
+            }
+        }
         else
             moveX = 0;
 
@@ -107,26 +118,33 @@ public class CharacterController : MonoBehaviour
 
 
         anim.SetFloat("Move", moveX);
-        if (moving && moveX == 0f)
+        if (moving && rigidBody.velocity.x == 0f)
         {
             moving = false;
             anim.SetBool("Moving", false);
         }
-        else if (!moving && moveX != 0f)
+        else if (!moving && rigidBody.velocity.x != 0f)
         {
             moving = true;
             anim.SetBool("Moving", true);
         }
 
+        //faster animation playback the faster we go?
+        if (accelTimer != 1f)
+            anim.speed = .5f + (accelTimer * .5f);
+        else
+            anim.speed = 2f;
+        if (anim.speed != 0f) Debug.Log(anim.speed);
+
         //walking trigger
         //turn off
-        if (isWalking && moveX == 0f)
+        if (isWalking && rigidBody.velocity.x == 0f)
         {
             isWalking = false;
             walkingTriggerGO.SetActive(false);
         }
         //turn on
-        if (!isWalking && moveX != 0f)
+        if (!isWalking && rigidBody.velocity.x != 0f)
         {
             isWalking = true;
             walkingTriggerGO.SetActive(true);
@@ -149,8 +167,16 @@ public class CharacterController : MonoBehaviour
         //for the case in which we quickly shift from moving right to left or vice versa
         if (moveX != prevMoveX && moveX != 0f) accelTimer = 0f;
 
-        if (moveX != 0f) accelTimer = Mathf.Clamp(accelTimer + (Time.deltaTime * 2f), 0f, 1f);
-        else accelTimer = Mathf.Clamp(accelTimer - (Time.deltaTime * 2f), 0f, 1f);
+        if (rigidBody.velocity.y >= -0.2f)
+        {
+            if (moveX != 0f) accelTimer = Mathf.Clamp(accelTimer + (Time.deltaTime * 3f), 0f, 1f);
+            else accelTimer = Mathf.Clamp(accelTimer - (Time.deltaTime * 3f), 0f, 1f);
+        }
+        //shrink accelleration value if we are falling down
+        else if (rigidBody.velocity.y < -0.2f)
+        {
+            accelTimer = Mathf.Clamp(accelTimer - (Time.deltaTime*.5f), 0f, 1f);
+        }
 
         //momentum factor of .08f for some reason. seems arbitrary. but then again, my definition of momentum is arbitrary.oops
         if (moveX != 0f)
@@ -189,11 +215,13 @@ public class CharacterController : MonoBehaviour
     void TryWalking()
     {
         //if (facingRight)
-        Debug.Log("accel:"+accelTimer);
-        Debug.Log("momentum:" + momentum);
+        //Debug.Log("accel:"+accelTimer);
+        //Debug.Log("momentum:" + momentum);
 
         float moveDir = 1;
         if (!facingRight) moveDir = -1f;
+
+        
 
         rigidBody.velocity = new Vector2((moveDir * moveSpeed * accelTimer) + momentum, rigidBody.velocity.y);
 
@@ -298,7 +326,7 @@ public class CharacterController : MonoBehaviour
     {
         currentCollisions.Add(collision.gameObject.name);
 
-        cornerWalled = CollisionEffect(collision.gameObject.tag, collision.transform);
+        cornerWalled = CollisionData(collision.gameObject.tag, collision.transform);
         if(collision.gameObject.name != "Base" && GetComponentInChildren<See>() == null)
             StartCoroutine(TempVis(collision.gameObject.GetComponent<SpriteRenderer>()));
         //set the tag, so things can know what we are colliding with at any given time 
@@ -326,7 +354,7 @@ public class CharacterController : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        cornerWalled = CollisionEffect(collision.gameObject.tag, collision.transform);
+        cornerWalled = CollisionData(collision.gameObject.tag, collision.transform);
         if(GetComponentInChildren<WallGrab>() != null)
         {
             if (!GetComponentInChildren<WallGrab>().canJump) cornerWalled = false;
@@ -370,32 +398,33 @@ public class CharacterController : MonoBehaviour
     }
 
     //return - whether we are touching the wall side of a corner
-    public bool CollisionEffect(string tag, Transform tf)
+    public bool CollisionData(string tag, Transform tf)
     {
         switch (tag)
         {
             case "Left":
-                transform.Find("Ring").GetComponent<SpriteMask>().sprite = mask_ringright;
+                //transform.Find("Ring").GetComponent<SpriteMask>().sprite = mask_ringright;
                 break;
             case "Right":
-                transform.Find("Ring").GetComponent<SpriteMask>().sprite = mask_ringleft;
+                //transform.Find("Ring").GetComponent<SpriteMask>().sprite = mask_ringleft;
                 break;
             case "Top":
-                transform.Find("Ring").GetComponent<SpriteMask>().sprite = mask_ringtop;
+                //transform.Find("Ring").GetComponent<SpriteMask>().sprite = mask_ringtop;
                 break;
             case "corner":
                 //Debug.Log("Colliding with corner!");
                 if ((tf.position.y + .9f) < transform.position.y)
-                    transform.Find("Ring").GetComponent<SpriteMask>().sprite = mask_ringbottom;
-                else if (tf.position.x < transform.position.x)
                 {
-                    transform.Find("Ring").GetComponent<SpriteMask>().sprite = mask_ringleft;
+                //transform.Find("Ring").GetComponent<SpriteMask>().sprite = mask_ringbottom;
+                }else if (tf.position.x < transform.position.x)
+                {
+                    //transform.Find("Ring").GetComponent<SpriteMask>().sprite = mask_ringleft;
                     if((tf.position.y + .6f > transform.position.y) && (transform.position.y > tf.position.y -.6f))
                         return true;
                 }
                 else if (tf.position.x > transform.position.x)
                 {
-                    transform.Find("Ring").GetComponent<SpriteMask>().sprite = mask_ringright;
+                    //transform.Find("Ring").GetComponent<SpriteMask>().sprite = mask_ringright;
                     if ((tf.position.y + .6f > transform.position.y) && (transform.position.y > tf.position.y - .6f))
                     {
                         return true;
@@ -403,7 +432,7 @@ public class CharacterController : MonoBehaviour
                 }
                 break;
             case "Floor":
-                transform.Find("Ring").GetComponent<SpriteMask>().sprite = mask_ringbottom;
+                //transform.Find("Ring").GetComponent<SpriteMask>().sprite = mask_ringbottom;
                 break;
             
             default:
@@ -417,5 +446,9 @@ public class CharacterController : MonoBehaviour
         transform.Find("Ring").GetComponent<SpriteMask>().sprite = mask_full;
     }
 
+    public void AddGamepad(InputDevice d)
+    {
+        gamepad = Gamepad.current;
+    }
 
 }

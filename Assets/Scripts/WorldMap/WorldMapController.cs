@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
+using Com.LuisPedroFonseca.ProCamera2D;
 
 public class WorldMapController : MonoBehaviour
 {
-
+    Gamepad gamepad;
+    
     public Transform playerAvatar;
     public WorldMapLevel currentLevel;
 
@@ -13,11 +16,21 @@ public class WorldMapController : MonoBehaviour
 
     bool takingInput;
 
+    //used for camera offset calculations
+    float xMargin, yMargin;
+    ProCamera2D camera;
+
     // Start is called before the first frame update
     void Start()
     {
+        gamepad = Gamepad.current;
         takingInput = true;
         canMoveTo = currentLevel.neighbors;
+        //center of screen is 12.5 x 9.375 world units in
+        //because the map is at 0, 0 these are our margins
+        xMargin = 12.5f;
+        yMargin = 9.375f;
+        camera = GameObject.FindObjectOfType<ProCamera2D>();
     }
 
     // Update is called once per frame
@@ -36,6 +49,23 @@ public class WorldMapController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return))
                 EnterLevel(currentLevel);
         }
+
+        //camera offset
+        //left of margin
+        if(playerAvatar.position.x < (-1 * xMargin))
+        {
+            camera.OffsetX = (-1 * xMargin) - playerAvatar.position.x;
+        }
+        //right of margin
+        else if(playerAvatar.position.x > xMargin)
+        {
+            camera.OffsetX = xMargin - playerAvatar.position.x;
+        }
+        else
+        {
+            camera.OffsetX = 0f;
+        }
+        //TODO y margin offset
     }
 
     public void AddLevel(WorldMapLevel l, Direction d)
@@ -75,6 +105,10 @@ public class WorldMapController : MonoBehaviour
         SceneManager.LoadScene(lvl.sceneName);
     }
 
+    public void AddGamepad(InputDevice d)
+    {
+        gamepad = Gamepad.current;
+    }
 }
 
 [System.Serializable]

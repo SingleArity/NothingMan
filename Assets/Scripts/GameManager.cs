@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 using TMPro;
 using Com.LuisPedroFonseca.ProCamera2D;
 
@@ -38,6 +39,7 @@ public class GameManager : MonoBehaviour
             DontDestroyOnLoad(messageGO.transform.parent);
             mainCam = GameObject.FindObjectOfType<ProCamera2D>();
             DontDestroyOnLoad(mainCam.gameObject);
+            SetupInputSystem();
         }
         //if there is already an instance, destroy this object, don't use it!
         else
@@ -201,5 +203,32 @@ public class GameManager : MonoBehaviour
         Debug.Log("GM RestartLevel");
         Instance.characterSpawned = false;
         SceneManager.LoadScene("level" + levelNum);
+    }
+
+    void SetupInputSystem()
+    {
+        if (Gamepad.current != null) InputManager.InitializeGamePad();
+        InputSystem.onDeviceChange += (device, change) =>
+        {
+            Debug.Log("device change detected");
+            switch (change)
+            {
+                case InputDeviceChange.Added:
+                    // New Device.
+                    Debug.Log("device added!");
+                    InputManager.AddDevice(device);
+                    break;
+                case InputDeviceChange.Disconnected:
+                    // Device got unplugged.
+                    break;
+                case InputDeviceChange.Removed:
+                    // Remove from Input System entirely; by default, Devices stay in the system once discovered.
+                    InputManager.RemoveDevice(device);
+                    break;
+                default:
+                    // See InputDeviceChange reference for other event types.
+                    break;
+            }
+        };
     }
 }
